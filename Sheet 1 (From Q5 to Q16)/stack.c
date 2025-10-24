@@ -49,7 +49,7 @@ stack_entry first_element(Stack *ps) {
     if (stack_empty(ps)) {
         return '\0';
     }
-    return ps->entry[0];
+    return ps->entry[1];
 }
 
 /* 
