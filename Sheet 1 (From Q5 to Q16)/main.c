@@ -4,7 +4,7 @@
 stack_entry first_element_user(Stack s) {
     Stack temp = s;
     stack_entry e;
-    while (temp.top > 1)
+    while (temp.top > 0)
         pop(&e, &temp);
     pop(&e, &temp);
     return e;
@@ -24,11 +24,11 @@ void destroy_stack_user(Stack *s) {
 }
 
 void copy_stack_user(Stack s, Stack *new) {
-    new->top = 0;
+    createStack(new);
     Stack temp = s;
     stack_entry e;
     Stack tmp_rev;
-    tmp_rev.top = 0;
+   createStack(&tmp_rev);
 
     while (!stack_empty(&temp)) {
         pop(&e, &temp);
@@ -41,9 +41,30 @@ void copy_stack_user(Stack s, Stack *new) {
     }
 }
 
-int stack_size_user(Stack s) {
-    return s.top;
+int stacksize_user(Stack S)
+{
+    Stack temp;          
+    createStack(&temp);
+    Stack copy = S;      
+    int counter = 0;
+    stack_entry e;
+
+    while (!isEmptystack(&copy))
+    {
+        pop(&e, &copy);
+        push(e, &temp);
+        counter++;
+    }
+    
+    while (!isEmptystack(&temp))
+    {
+        pop(&e, &temp);
+        push(e, &S);
+    }
+
+    return counter;
 }
+
 
 void print_stack_user(Stack s) {
     Stack temp = s;
