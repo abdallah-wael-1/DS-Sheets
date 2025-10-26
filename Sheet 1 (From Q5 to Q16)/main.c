@@ -5,7 +5,7 @@ stack_entry firstElement(Stack s)
 {
     Stack temp = s;
     stack_entry e;
-    while (!isEmptystack(&temp)) {
+    while (!stack_empty(&temp)) {
         pop(&e, &temp);
     }
     return e;
@@ -50,14 +50,14 @@ int stacksize_user(Stack S)
     int counter = 0;
     stack_entry e;
 
-    while (!isEmptystack(&copy))
+    while (!stack_empty(&copy))
     {
         pop(&e, &copy);
         push(e, &temp);
         counter++;
     }
     
-    while (!isEmptystack(&temp))
+    while (!stack_empty(&temp))
     {
         pop(&e, &temp);
         push(e, &S);
