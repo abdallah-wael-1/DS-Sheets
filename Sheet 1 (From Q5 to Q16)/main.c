@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include "stack.h"
 
-stack_entry first_element_user(Stack s) {
+stack_entry firstElement(Stack s)
+{
     Stack temp = s;
     stack_entry e;
-    while (temp.top > 0)
+    while (!isEmptystack(&temp)) {
         pop(&e, &temp);
-    pop(&e, &temp);
+    }
     return e;
 }
 
