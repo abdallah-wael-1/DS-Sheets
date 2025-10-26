@@ -5,7 +5,7 @@
 Pre: stack is initialized
 Post: stack is empty
 */
-void create_stack(Stack *ps) {
+void createStack(Stack *ps) {
     ps->top = 0;
 }
 
