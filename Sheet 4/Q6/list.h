@@ -15,6 +15,7 @@ typedef struct {
 } List;
 
 void push_back_impl(List *pl, ListEntry e);
-
+void printList(List l) ;
+void JoinList(List *pl1, List *pl2);
 
 #endif
