@@ -7,22 +7,6 @@ void push_back(List *pl, ListEntry e) {
     push_back_impl(pl, e);  
 }
 
-void JoinList(List *pl1, List *pl2) {
-    Node *cur = pl1->head;
-    while (cur != NULL) {
-        push_back(pl2, cur->data); 
-        cur = cur->next;
-    }
-}
-
-void printList(List l) {
-    Node *cur = l.head;
-    while (cur != NULL) {
-        printf("%d -> ", cur->data);
-        cur = cur->next;
-    }
-    printf("NULL\n");
-}
 
 int main() {
     List l1 = {NULL, NULL, 0};
@@ -48,3 +32,4 @@ int main() {
 
     return 0;
 }
+
