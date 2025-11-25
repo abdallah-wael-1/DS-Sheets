@@ -10,7 +10,7 @@ void JoinList(List1 *pl1, List1 *pl2)
 {
     List temp;
     createList(&temp);
-    type e;
+    ListEntry e;
     int s=listSize(pl2);
     while(!isEmptyList(pl1))
   {
@@ -70,6 +70,7 @@ int main() {
 
     return 0;
 }
+
 
 
 
