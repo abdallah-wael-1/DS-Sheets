@@ -2,11 +2,48 @@
 #include "list.h"
 #include <stdlib.h>
 
-
 void push_back(List *pl, ListEntry e) {
     push_back_impl(pl, e);  
 }
+void JoinList(List1 *pl1, List1 *pl2)
+{
+    List1 temp;
+    createList(&temp);
+    type e;
+    int s=listSize(pl2);
+    while(!isEmptyList(pl1))
+  {
 
+    deleteList(pl1,0,&e);
+    insertList(&temp,0,e);
+
+}
+while(!isEmptyList(&temp))
+  {
+
+    deleteList(&temp,0,&e);
+    insertList(pl2,s,e);
+    insertList(pl1,0,e);
+
+}
+
+}
+
+void printEntry(ListEntry e) {
+    printf("%d ", e);
+}
+
+
+void printList_user(List *pl) {
+    if (listEmpty(pl)) {
+        printf("List is empty\n");
+        return;
+    }
+
+    printf("List: ");
+    traverseList(pl, printEntry);
+    printf("\n");
+}
 
 int main() {
     List l1 = {NULL, NULL, 0};
@@ -32,4 +69,5 @@ int main() {
 
     return 0;
 }
+
 
