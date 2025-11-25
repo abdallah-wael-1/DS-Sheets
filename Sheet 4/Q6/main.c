@@ -5,9 +5,10 @@
 void push_back(List *pl, ListEntry e) {
     push_back_impl(pl, e);  
 }
+
 void JoinList(List1 *pl1, List1 *pl2)
 {
-    List1 temp;
+    List temp;
     createList(&temp);
     type e;
     int s=listSize(pl2);
@@ -69,5 +70,6 @@ int main() {
 
     return 0;
 }
+
 
 
