@@ -14,10 +14,16 @@ typedef struct {
     int size;
 } List;
 
-void push_back_impl(List *pl, ListEntry e);
-void printList(List l) ;
-void JoinList(List *pl1, List *pl2);
-void traverseList(List *pl, void (*visit)(ListEntry));
+void createList(List *pl);                           
+int isEmptyList(List *pl);                         
+int listSize(List *pl);                              
+void insertList(List *pl, int pos, ListEntry e);  
+void deleteList(List *pl, int pos, ListEntry *e);   
+void traverseList(List *pl, void (*visit)(ListEntry)); 
+void printList(List l);                              
+void JoinList(List *pl1, List *pl2);                
+void push_back_impl(List *pl, ListEntry e);     
 
 #endif
+
 
