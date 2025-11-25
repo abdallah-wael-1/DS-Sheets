@@ -32,3 +32,11 @@ void printList(List l) {
     }
     printf("NULL\n");
 }
+
+void traverseList(List *pl, void (*visit)(ListEntry)) {
+    Node *current = pl->head;
+    while (current != NULL) {
+        visit(current->data);
+        current = current->next;
+    }
+}
